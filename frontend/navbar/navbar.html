@@ -1,0 +1,49 @@
+<header class="border-b border-[#eaded4] bg-[#fffaf5]/95 backdrop-blur">
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 md:px-10"
+  >
+    <a
+      href="/index.html"
+      class="flex items-center gap-3"
+      aria-label="Macaron home"
+    >
+      <img
+        class="h-12 w-12 rounded-full object-cover sm:h-14 sm:w-14"
+        src="assets/logo.png"
+        alt="Macaron logo"
+      />
+      <span class="text-xl font-semibold tracking-tight sm:text-2xl"
+        >Macaronnaya lavka
+      </span>
+    </a>
+    <div class="hidden items-center gap-10 font-medium text-lg md:flex">
+      <a href="#home" class="transition hover:text-[var(--red)]">Главная</a>
+      <a href="#catalog" class="transition hover:text-[var(--red)]"
+        >Наше меню</a
+      >
+      <a href="#about" class="transition hover:text-[var(--red)]">О нас </a>
+      <a href="#contact" class="transition hover:text-[var(--red)]">Контакты</a>
+    </div>
+    <a
+      href=""
+      class="bg-[var(--primary)] text-white rounded-3xl hidden px-6 py-3 sm:inline-block hover:bg-[var(--red)] duration-200"
+    >
+      Вход
+    </a>
+    <button
+      id="menuToggle"
+      class="flex h-10 w-10 justify-center items-center rounded-full border border-[#eaded4] text-xl md:hidden"
+    >
+      ☰
+    </button>
+  </nav>
+  <div
+    id="mobileMenu"
+    class="hidden border-t border-[#eaded4] px-5 pb-4 md:hidden"
+  >
+    <a href="#home" class="block py-3">Home</a>
+    <a href="#catalog" class="block py-3">Our sweets</a>
+    <a href="#about" class="block py-3">About us</a>
+    <a href="#contact" class="block py-3">Contact</a>
+  </div>
+</header>

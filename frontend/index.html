@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Macaron — a little sweetness</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      :root {
+        --primary: rgb(75, 47, 28);
+        --secondary: rgb(244, 228, 216);
+        --red: rgb(217, 121, 111);
+        --bg: rgb(255, 250, 245);
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .group {
+        transition: transform 0.3s;
+        animation: fade 1.4s;
+      }
+      .carousel {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+      }
+
+      .carousel::-webkit-scrollbar {
+        display: none;
+      }
+
+      @keyframes popup {
+        from {
+          opacity: 0;
+          transform: scale(0.1);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .details {
+        animation: popup 0.5s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--bg)] text-[var(--primary)]">
+    <div
+      class="bg-[var(--primary)] px-5 py-4 text-center uppercase tracking-[.12em] text-white text-[10px] md:text-xs"
+    >
+      Даже небольшое угощение может значить очень много<span class="px-1"
+        >·</span
+      >
+      СВЕЖАЯ ВЫПЕЧКА КАЖДЫЙ ДЕНЬ
+    </div>
+    <section name="navbar" class="sticky top-0 z-40"></section>
+    <main>
+      <section
+        id="home"
+        class="mx-auto grid max-w-7xl items-center gap-9 px-4 py-10 sm:px-6 md:grid-cols-2 md:px-10 md:py-16"
+      >
+        <div>
+          <p
+            class="mb-4 text-xs font-bold uppercase tracking-[.22em] text-[var(--red)]"
+          >
+            МАЛЕНЬКИЕ ПАРТИИ, БОЛЬШАЯ ЛЮБОВЬ
+          </p>
+          <h1
+            class="text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl"
+          >
+            Говорят,
+            <span class="italic text-[var(--red)]">они</span> вызывают
+            зависимость.
+          </h1>
+          <p class="mt-5 max-w-lg leading-7 text-[#806d60]">
+            Нежные макаронс, авторские десерты и ароматный кофе, ради которых
+            хочется замедлиться. Ваш маленький повод для счастья уже совсем
+            рядом.
+          </p>
+          <a
+            href="#catalog"
+            class="mt-7 inline-block rounded-full bg-[var(--red)] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[var(--primary)]"
+            >Выбрать десерты →
+          </a>
+        </div>
+        <div class="relative">
+          <img
+            src="assets/image1.avif"
+            alt="Freshly baked croissants"
+            class="h-[340px] w-full rounded-t-[45%] rounded-b-3xl object-cover sm:h-[460px]"
+          />
+          <div
+            class="absolute -bottom-4 left-4 rounded-3xl bg-white p-4 shadow-lg sm:left-7 sm:p-5"
+          >
+            <h2 class="text-lg font-semibold">Сделано с любовью</h2>
+            <p class="mt-1 text-base text-[#9a918b]">
+              Свежая выпечка каждый день
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[var(--secondary)]">
+        <div
+          class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:px-10 md:py-20"
+        >
+          <img
+            class="h-85 w-full rounded-3xl object-cover"
+            src="assets/image2.jpeg"
+            alt="Fresh artisan bakery treats"
+          />
+          <div>
+            <p
+              class="text-sm font-bold uppercase tracking-[.2em] text-[var(--red)]"
+            >
+              ВАШИ ЛЮБИМЫЕ ВКУСЫ
+            </p>
+            <h2 class="mt-3 tracking-tight text-3xl font-bold md:text-5xl">
+              ТЕ САМЫЕ
+              <span class="italic text-[var(--red)]">МАКАРОН</span>
+            </h2>
+            <p class="mt-4 leading-7 text-[#806d60]">
+              Мы создаём десерты, которые хочется не только попробовать, но и
+              подарить. Нежные макаронс, ароматная выпечка и любимые сладости —
+              всё для моментов, которые хочется продлить.
+            </p>
+            <a href="#about" class="mt-5 inline-block font-bold"
+              >Познакомьтесь с нами →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[var(--primary)] text-white">
+        <div
+          class="mx-auto grid max-w-7xl items-center gap-15 px-5 py-20 md:grid-cols-2 md:px-10"
+        >
+          <div>
+            <p
+              class="text-xs font-bold uppercase tracking-[.2em] text-[#e7b0a2]"
+            >
+              НАШ АССОРТИМЕНТ
+            </p>
+
+            <h2 class="serif mt-3 text-4xl font-semibold leading-[1.3]">
+              Создано с любовью.
+              <br />
+              <span class="italic text-[#e9b3a5]">Выбрано сердцем..</span>
+            </h2>
+
+            <p class="mt-5 leading-7 text-[#d8c5ba]">
+              Свежая выпечка, нежные десерты и ароматный кофе — всё, ради чего
+              хочется заглянуть к нам снова. Выбирайте любимое, пробуйте новое и
+              находите свой идеальный вкус.
+            </p>
+
+            <a
+              href="#catalog"
+              class="mt-8 inline-block rounded-full bg-[#e6b6a5] px-6 py-3 font-bold text-[#482b20]"
+            >
+              Наше меню →
+            </a>
+          </div>
+
+          <div class="carousel flex gap-4">
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://i0.photo.2gis.com/main/branch/112/70000001075192979/common"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://avatars.mds.yandex.net/get-altay/18396981/2a0000019ab1b4113d6c3cbafcfc802c17d1/L_height"
+            />
+
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://content2.flowwow-images.com/data/flowers/524x524/00/1766589334_92675200.jpg"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZCu013GkSnnaK89fbZjY7MAKp-aNX8qxLMNeXMm_nn25Q_Yao3aTAuhFU&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/0f99db184179713.654cd7f992df8.png"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt1OtmLz_N44Kf1peZA1MSiFR8R99nhAGsCm9Ll00S8Q&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ZTlj69clE_yXPccZeEusMXjpFe3MlCr8hqc2Sh4A_jzI9d1oKyTDC8wx&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFuDLqQJmSuudXQAiihAe_NNI1M7UDfSdY2OGNIh5FXkRGL_b7ItMpKLo&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRl4Ky5S5zsq6ewFmb_gKruwrx4eHQ---OPT1mxyw-CECsqWwSHci6YxA&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHVwrUrmB1j6frJfQ8pJZ2bytn7j2THGO--3XVTh6817V11B_MIFP1rsq&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWubTrBVR-5dGB9v4j1-xdwkGu1tIriYXmqSPFQ6cqT9CSqgG-BnV8ezI&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/0f99db184179713.654cd7f992df8.png"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://avatars.mds.yandex.net/get-altay/15281020/2a000001958551eac722f09ab6847aab19c0/L_height"
+            /><img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWL2Fn8W_7c7PWJfxdAn2uHSEoy_Nd2btQ4EzT3NGx_nSh05Ukt6ARGlqG&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://avatars.mds.yandex.net/get-altay/18396981/2a0000019ab1b4113d6c3cbafcfc802c17d1/L_height"
+            /><img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR52ohq_UlnFh_ktZxIF7O_y6xmOTTANCepzvvEA93QoTIwTwwUpvua83mh&s=10"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://avatars.mds.yandex.net/get-altay/16474107/2a0000019a8c1fa740f87c165b5e0f7dbafd/L_height"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl1SlAj0wodHS9Iqp0WgIe7KpemLk5qubBR0oCf7seFw5wtiGGgov35kkE&s=10"
+            />
+
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://avatars.mds.yandex.net/get-altay/14910910/2a00000197ab6e45ffd042ee466f55e4694d/L_height"
+            />
+            <img
+              class="h-75 w-full rounded-xl object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmiyQPMh9wg-c4w5OTGX6lsza-7Xd_N2vgTqVnM90MfBLj-cXmilVAHSuR&s=10"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="catalog"
+        class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20"
+      >
+        <div
+          class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"
+        >
+          <div>
+            <h2 class="mt-3 font-bold text-4xl">
+              ВАШИ ЛЮБИМЫЕ
+              <span class="italic text-[var(--red)]">ВКУСЫ</span>
+            </h2>
+          </div>
+        </div>
+        <div class="mt-7 grid gap-3 sm:grid-cols-[1fr_auto_auto]">
+          <label
+            class="flex text-lg items-center gap-3 rounded-2xl border border-[#eaded4] bg-white px-4 py-3.5"
+            ><input
+              id="searchInput"
+              type="search"
+              placeholder="Поиск сладостей..."
+              class="min-w-0 flex-1 bg-transparent outline-none"
+              aria-label="Search products"
+            /><button
+              id="clearSearch"
+              class="hidden text-sm font-bold text-[var(--red)]"
+            >
+              Очистить всё
+            </button></label
+          >
+
+          <select
+            id="sortSelect"
+            class="rounded-2xl border text-base border-[#eaded4] bg-white px-4 py-3.5"
+          >
+            <option value="all">Все</option>
+            <option value="newest">Новинки</option>
+            <option value="price_asc">Цена: от низкой к высокой</option>
+            <option value="price_desc">Цена: от высокой к низкой</option>
+            <option value="name_asc">Название: От А до Я</option>
+          </select>
+          <button
+            id="showAddForm"
+            class="rounded-full bg-[#56351f] px-5 py-4 text-base font-semibold text-white transition hover:bg-[var(--red)]"
+          >
+            + Добавить
+          </button>
+        </div>
+        <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+          <div id="filters" class="flex flex-wrap gap-2"></div>
+        </div>
+        <form
+          id="productForm"
+          class="mt-5 hidden rounded-2xl border border-[#eaded4] bg-white p-5 sm:p-6"
+        >
+          <div
+            class="mb-4 flex items-center text-[var(--red)] justify-between gap-3"
+          >
+            <h3 class="text-2xl font-bold">
+              Добавьте в меню что-нибудь сладкое !
+            </h3>
+            <button
+              type="button"
+              id="cancelAdd"
+              class="text-4xl text-[#9a918b]"
+              aria-label="Close form"
+            >
+              ×
+            </button>
+          </div>
+          <div class="grid text-lg font-medium gap-3 sm:grid-cols-2">
+            <label
+              >Имя продукта<input
+                name="name"
+                required
+                maxlength="120"
+                class="mt-1 block w-full rounded-xl border border-gray-300 px-3 py-2.5"
+                placeholder="например: малиновый макарон" /></label
+            ><label
+              >Категория<input
+                name="category"
+                required
+                maxlength="60"
+                class="mt-1 block w-full rounded-xl border border-gray-300 px-3 py-2.5"
+                placeholder="Макарон" /></label
+            ><label
+              >Цена (₸)<input
+                name="price"
+                required
+                type="number"
+                min="0.01"
+                step="0.01"
+                class="mt-1 block w-full rounded-xl border border-gray-300 px-3 py-2.5"
+                placeholder="1290" /></label
+            ><label
+              >Ярлык<input
+                name="tag"
+                maxlength="50"
+                class="mt-1 block w-full rounded-xl border border-gray-300 px-3 py-2.5"
+                placeholder="Бестселлер" /></label
+            ><label class="sm:col-span-2"
+              >Изображение<input
+                name="image"
+                required
+                type="url"
+                class="mt-1 block w-full rounded-xl border border-gray-300 px-3 py-2.5"
+                placeholder="" /></label
+            ><label class="sm:col-span-2"
+              >Описание<textarea
+                name="description"
+                required
+                maxlength="1000"
+                rows="3"
+                class="mt-1 block w-full rounded-xl border border-[#eaded4] px-3 py-2.5"
+                placeholder="Расскажите нам, что делает это особенным..."
+              ></textarea>
+            </label>
+          </div>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              type="submit"
+              class="rounded-full bg-[var(--red)] px-6 py-3 font-semibold transition text-white hover:bg-[var(--primary)]"
+            >
+              Сохранить</button
+            ><span
+              id="formMessage"
+              class="text-sm text-gray-400"
+              aria-live="polite"
+            ></span>
+          </div>
+        </form>
+        <div
+          id="productGrid"
+          class="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4"
+        ></div>
+        <div id="emptyState" class="hidden py-12 text-center">
+          <h3 class="text-2xl">Пока что сладостей не нашлось.</h3>
+          <p class="mt-2 text-sm text-[#9a918b]">
+            Попробуйте другой поиск или другую категорию.
+          </p>
+        </div>
+        <nav
+          id="pagination"
+          class="mt-8 flex items-center justify-center gap-4"
+          aria-label="Product pages"
+        ></nav>
+      </section>
+    </main>
+
+    <section id="about" class="mx-auto max-w-7xl px-5 py-20 md:px-10">
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <p
+            class="text-base font-bold uppercase tracking-[.2em] text-[var(--red)]"
+          >
+            наша история
+          </p>
+
+          <h2 class="mt-3 font-semibold text-5xl">
+            <span class="italic text-[var(--red)]">Вкус,</span>
+
+            ради которого хочется вернуться.
+          </h2>
+
+          <p class="mt-5 leading-7 text-gray-500">
+            «Макаронная лавка» появилась из простого желания — сделать привычные
+            моменты немного слаще. Мы верим, что особенное настроение
+            складывается из мелочей: аромата свежей выпечки, любимого десерта и
+            времени, проведённого с близкими.
+          </p>
+
+          <p class="mt-4 leading-7 text-gray-500">
+            Загляните к нам за утренним кофе, выберите что-нибудь сладкое для
+            дорогого человека или просто позвольте себе небольшую паузу. У нас
+            всегда найдётся место для ещё одной чашки кофе и чего-нибудь
+            вкусного.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5">
+          <img
+            src="assets/image3.jpeg"
+            alt="Fresh bakery preparation"
+            class="mt-8 h-80 w-full rounded-2xl object-cover"
+          />
+          <img
+            src="assets/image4.jpeg"
+            alt="Fresh bakery preparation"
+            class="mt-8 h-80 w-full rounded-2xl object-cover"
+          />
+
+          <div
+            class="col-span-2 grid grid-cols-3 rounded-2xl bg-white p-5 text-center"
+          >
+            <div>
+              <p class="text-3xl text-[var(--red)]">01</p>
+              <p class="mt-1 text-xs text-[#897d75]">Свежая выпечка</p>
+            </div>
+            <div>
+              <p class="text-3xl text-[var(--red)]">100%</p>
+              <p class="mt-1 text-xs text-[#897d75]">Внимание к деталям</p>
+            </div>
+            <div>
+              <p class="text-3xl text-[var(--red)]">♡</p>
+              <p class="mt-1 text-xs text-[#897d75]">С любовью для вас</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:px-10">
+      <div
+        class="flex flex-col justify-between bg-[var(--secondary)] gap-5 rounded-[28px] px-6 py-15 sm:px-10 md:flex-row md:items-center"
+      >
+        <div>
+          <p
+            class="text-xs font-bold uppercase tracking-[.2em] text-[var(--red)]"
+          >
+            Контакты
+          </p>
+          <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">
+            У вас есть вопрос?
+            <span class="italic text-[var(--red)]">
+              У нас есть сладкий ответ.
+            </span>
+          </h2>
+          <p class="mt-2 text-gray-500">
+            Хотите узнать о наличии десертов, оформить индивидуальный заказ или
+            просто уточнить детали?<br />
+            Напишите или позвоните нам — мы будем рады помочь.
+          </p>
+        </div>
+        <a
+          href=""
+          class="w-fit rounded-full bg-[var(--red)] px-6 py-3 font-semibold text-white hover:bg-[var(--red)]"
+          >Свяжитесь с нами
+        </a>
+      </div>
+    </section>
+
+    <section name="footer"></section>
+    <div
+      id="productDialog"
+      class="fixed inset-0 z-50 hidden items-center overflow-y-auto justify-center bg-[#362319]/55 p-4 backdrop-blur-[3px]"
+    >
+      <div
+        class="details max-h-full w-[min(92vw,600px)] overflow-hidden rounded-3xl bg-white text-[#56351f] shadow-2xl"
+      >
+        <div class="relative">
+          <img
+            id="dialogImage"
+            class="h-64 w-full bg-[#f1eeeb] object-cover sm:h-80 hover:scale-103 transition"
+            alt=""
+          /><button
+            type="button"
+            id="closeDialog"
+            class="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white text-2xl"
+            aria-label="Close product details"
+          >
+            ×
+          </button>
+        </div>
+        <div class="p-6 sm:p-8">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p
+                id="dialogCategory"
+                class="text-xs font-bold uppercase tracking-widest text-[var(--red)]"
+              ></p>
+              <h2 id="dialogName" class="mt-2 text-3xl font-semibold"></h2>
+            </div>
+            <span
+              id="dialogTag"
+              class="rounded-full bg-[#fff0ed] px-3 py-1.5 text-xs font-semibold text-[var(--red)]"
+            ></span>
+          </div>
+          <p
+            id="dialogDescription"
+            class="text-lg mt-5 leading-7 text-[#806d60]"
+          ></p>
+          <div
+            class="mt-7 flex items-center justify-between border-t border-[#f0e5dc] pt-5"
+          >
+            <span id="dialogPrice" class="text-2xl font-semibold"></span
+            ><button
+              type="button"
+              id="deleteProduct"
+              class="rounded-full border border-red-200 px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-[var(--red)] hover:text-white tr"
+            >
+              Удалить
+            </button>
+          </div>
+          <p
+            id="dialogMessage"
+            class="mt-3 text-sm text-[#9a918b]"
+            aria-live="polite"
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>
