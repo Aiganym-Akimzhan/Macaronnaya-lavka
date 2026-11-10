@@ -42,7 +42,6 @@ function formatPrice(price) {
   return Number(price).toLocaleString("ru-RU") + " ₸";
 }
 
-//filterss
 function renderFilters() {
   const filters = document.querySelector("#filters");
   let buttons = "";
@@ -72,7 +71,6 @@ function renderFilters() {
   filters.innerHTML = buttons;
 }
 
-// Create a product
 function createProductCard(product) {
   return `
     <article
@@ -120,7 +118,6 @@ function createProductCard(product) {
   `;
 }
 
-// Show products
 function renderProducts() {
   const emptyState = document.querySelector("#emptyState");
 
@@ -143,7 +140,6 @@ function renderProducts() {
   productGrid.innerHTML = cards;
 }
 
-//  pagination
 function renderPagination() {
   const pagination = document.querySelector("#pagination");
 
@@ -251,7 +247,6 @@ function closeProductDialog() {
   productDialog.classList.remove("flex");
 }
 
-// Click on a product card
 function handleProductClick(event) {
   const card = event.target.closest("[data-product-id]");
 
@@ -269,7 +264,6 @@ function handleProductClick(event) {
   }
 }
 
-// Delete a product
 async function deleteProduct() {
   if (!selectedProduct) {
     return;
@@ -304,7 +298,6 @@ async function deleteProduct() {
   }
 }
 
-// Add a new product
 async function saveProduct(event) {
   event.preventDefault();
 
@@ -359,22 +352,18 @@ async function saveProduct(event) {
   }
 }
 
-// Show or hide the product form
 function toggleProductForm() {
   const form = document.querySelector("#productForm");
 
   form.classList.toggle("hidden");
 }
 
-// Cancel adding a product
 function cancelProductForm() {
   document.querySelector("#productForm").classList.add("hidden");
   document.querySelector("#formMessage").innerHTML = "";
 }
 
-// Set up events
 function setupEvents() {
-  // Search
   document
     .querySelector("#searchInput")
     .addEventListener("input", function (event) {
@@ -382,14 +371,12 @@ function setupEvents() {
       applyFilters();
     });
 
-  // Clear search
   document.querySelector("#clearSearch").addEventListener("click", function () {
     document.querySelector("#searchInput").value = "";
     search = "";
     applyFilters();
   });
 
-  // Categories
   document
     .querySelector("#filters")
     .addEventListener("click", function (event) {
@@ -401,7 +388,6 @@ function setupEvents() {
       }
     });
 
-  // Sorting
   document
     .querySelector("#sortSelect")
     .addEventListener("change", function (event) {
@@ -409,7 +395,6 @@ function setupEvents() {
       applyFilters();
     });
 
-  // Pagination
   document
     .querySelector("#pagination")
     .addEventListener("click", function (event) {
@@ -428,10 +413,8 @@ function setupEvents() {
       });
     });
 
-  // Product cards
   productGrid.addEventListener("click", handleProductClick);
 
-  // Close popup
   document
     .querySelector("#closeDialog")
     .addEventListener("click", closeProductDialog);
@@ -442,35 +425,29 @@ function setupEvents() {
     }
   });
 
-  // Close popup with Escape
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && !productDialog.classList.contains("hidden")) {
       closeProductDialog();
     }
   });
 
-  // Delete product
   document
     .querySelector("#deleteProduct")
     .addEventListener("click", deleteProduct);
 
-  // Add product
   document
     .querySelector("#showAddForm")
     .addEventListener("click", toggleProductForm);
 
-  // Cancel
   document
     .querySelector("#cancelAdd")
     .addEventListener("click", cancelProductForm);
 
-  // Submit form
   document
     .querySelector("#productForm")
     .addEventListener("submit", saveProduct);
 }
 
-// Start the website
 async function startPage() {
   setupEvents();
   await loadProducts();
